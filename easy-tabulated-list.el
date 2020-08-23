@@ -118,5 +118,29 @@ DATA can either be the following data type.
            (user-error "[ERROR] Unknown data type to form entries: %s" data)))
     result))
 
+;;;###autoload
+(cl-defun easy-tabulated-list-make (format entries &key sort-key fake-header (padding 1))
+  "Make a `tabulated-list' buffer with FORMAT and ENTRIES.
+
+SORT-KEY must be an association list form with a string and a boolean.
+For example, (cons \"Key-Str\" nil).
+
+FAKE-HEADER must be a string that will display just below the header.
+
+PADDING is the integer that shift list to the right from the left."
+  (setq tabulated-list-format format)
+  (when padding (setq tabulated-list-padding padding))
+  (when sort-key (setq tabulated-list-sort-key sort-key))
+  (tabulated-list-init-header)
+  (setq tabulated-list-entries entries)
+  (tabulated-list-print t)
+  (when fake-header (easy-tabulated-list-fake-header-string fake-header)))
+
+;;;###autoload
+(defun easy-tabulated-list-fake-header-string (fake-header)
+  "Set the FAKE-HEADER to `tabulated-list'."
+  (setq tabulated-list--header-string fake-header)
+  (tabulated-list-print-fake-header))
+
 (provide 'easy-tabulated-list)
 ;;; easy-tabulated-list.el ends here
