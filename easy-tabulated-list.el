@@ -34,10 +34,35 @@
 
 (require 'tabulated-list)
 
+;;; Util
+
+(defun easy-tabulated-list--vec-to-list (vec)
+  "Convert VEC to list object."
+  (when (vectorp vec) (append vec nil)))
+
+;;; Core
+
+(defun easy-tabulated-list-form-entries-vector (vec-data)
+  "Form entries from VEC-DATA.
+VEC-DATA must be a vector like below data type is presented.
+[a b c d e f g h i j k l m]"
+  (let ((list-data (easy-tabulated-list--vec-to-list vec-data)))
+    (easy-tabulated-list-form-entries-list list-data)))
+
+(defun easy-tabulated-list-form-entries-vector-2 (vec-2-data)
+  "Form entries from VEC-2-DATA.
+VEC-DATA must be a 2 dimensional vector like below data type is presented.
+[[a b c] [d e f] [g h i] [j k l m]]"
+  (let ((list-2-data '())
+        (cnt 0) (len (length vec-2-data)))
+    (while (< cnt len)
+      (push (easy-tabulated-list--vec-to-list (elt vec-2-data cnt)) list-2-data)
+      (setq cnt (1+ cnt)))
+    (easy-tabulated-list-form-entries-list-2 (reverse list-2-data))))
+
 (defun easy-tabulated-list-form-entries-list (list-data)
   "Form entries from LIST-DATA.
-LIST-DATA is a list like the data type below.
-
+LIST-DATA must be a list like below data type is presented
 '(a b c d e f g h i j k l m)"
   (let ((len (length tabulated-list-format))
         (list-2-data '()) (lst '()) (cnt 0))
@@ -54,8 +79,7 @@ LIST-DATA is a list like the data type below.
 
 (defun easy-tabulated-list-form-entries-list-2 (list-2-data)
   "Form entries from LIST-2-DATA.
-LIST-2-DATA is a 2 dimensional list like the data type below.
-
+LIST-2-DATA must be a 2 dimensional list like below data type is presented.
 '((a b c e f g) (h i j k l m))"
   (let ((entries '()) (id-count 0))
     (dolist (inner-lst list-2-data)
@@ -73,9 +97,9 @@ LIST-2-DATA is a 2 dimensional list like the data type below.
 (defun easy-tabulated-list-form-entries (data)
   "Form entries from DATA.
 DATA can either be the following data type.
-  - vector
   - list
   - 2 dimensional list
+  - vector
   - 2 dimensional vector"
   (let (inner-item result)
     (cond ((listp data)
@@ -85,7 +109,11 @@ DATA can either be the following data type.
                  (t  ; list
                   (setq result (easy-tabulated-list-form-entries-list data)))))
           ((vectorp data)
-           )
+           (setq inner-item (elt data 0))
+           (cond ((vectorp inner-item)  ; 2 dimensional vector
+                  (setq result (easy-tabulated-list-form-entries-vector-2 data)))
+                 (t  ; vector
+                  (setq result (easy-tabulated-list-form-entries-vector data)))))
           (t
            (user-error "[ERROR] Unknown data type to form entries: %s" data)))
     result))
