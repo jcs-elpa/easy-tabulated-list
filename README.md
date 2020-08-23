@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/jcs-elpa/tabulated-list-util.svg?branch=master)](https://travis-ci.com/jcs-elpa/tabulated-list-util)
+[![Build Status](https://travis-ci.com/jcs-elpa/easy-tabulated-list.svg?branch=master)](https://travis-ci.com/jcs-elpa/easy-tabulated-list)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-# tabulated-list-util
+# easy-tabulated-list
 > Simplify usage for `tabulated-list'.
 
 ## Contribution
