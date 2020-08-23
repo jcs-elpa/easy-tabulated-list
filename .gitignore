@@ -2,7 +2,7 @@
 /.git
 /recipes
 /test
-tabulated-list-util-pkg.el
+easy-tabulated-list-pkg.el
 
 # ignore generated files.
 *.elc

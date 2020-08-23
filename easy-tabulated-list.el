@@ -1,4 +1,4 @@
-;;; tabulated-list-util.el --- Simplify usage for `tabulated-list'  -*- lexical-binding: t; -*-
+;;; easy-tabulated-list.el --- Simplify usage for `tabulated-list'  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  Shen, Jen-Chieh
 ;; Created date 2020-08-23 17:15:12
@@ -8,7 +8,7 @@
 ;; Keyword: tabulated list table usage simplify
 ;; Version: 0.0.1
 ;; Package-Requires: ((emacs "24.3"))
-;; URL: https://github.com/jcs-elpa/tabulated-list-util
+;; URL: https://github.com/jcs-elpa/easy-tabulated-list
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -34,5 +34,5 @@
 
 
 
-(provide 'tabulated-list-util)
-;;; tabulated-list-util.el ends here
+(provide 'easy-tabulated-list)
+;;; easy-tabulated-list.el ends here
