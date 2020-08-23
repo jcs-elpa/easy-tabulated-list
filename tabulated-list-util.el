@@ -8,7 +8,7 @@
 ;; Keyword: tabulated list table usage simplify
 ;; Version: 0.0.1
 ;; Package-Requires: ((emacs "24.3"))
-;; URL: https://github.com/jcs090218/tabulated-list-util
+;; URL: https://github.com/jcs-elpa/tabulated-list-util
 
 ;; This file is NOT part of GNU Emacs.
 
