@@ -12,8 +12,8 @@ with `tabulated-list`.
 Set all needed variables within a function call.
 
 ```el
-(easy-tabulated-list-make your-format
-                          (your-entires)
+(easy-tabulated-list-make (your-entires)
+                          :format your-format
                           :sort-key (cons "Type" nil)
                           :padding 1)
 ```
