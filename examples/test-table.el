@@ -46,8 +46,7 @@
                             :padding 1)
   (tabulated-list-revert))
 
-
-;; You will still able
+;; Define your `tabulated-list' major mode.
 (define-derived-mode test-table-mode tabulated-list-mode
   "test-table-mode"
   "Major mode for `test-table'."
