@@ -39,7 +39,7 @@ With these functionality, you now able to create buffer built on top of
 from `tabulated-list`. This brings you the benefits to just focus on building the
 data table itself.
 
-See example [here](./examples/test-table.el).
+* See example [here](./examples/test-table.el).
 
 ## Contribution
 
