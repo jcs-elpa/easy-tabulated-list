@@ -32,7 +32,7 @@ data you want to display in the table.
                                         '("7" "8")))
 ```
 
-## Advance Usage
+## Examples
 
 With these functionality, you now able to create buffer built on top of
 `tabulated-list`. You will no longer need to worry about the basic implementation
