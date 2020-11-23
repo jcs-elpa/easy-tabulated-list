@@ -17,8 +17,8 @@ this package would help and make the code a little bit cleaner.
 Set all needed variables within a function call.
 
 ```el
-(easy-tabulated-list-make (your-entires)
-                          :format your-format
+(easy-tabulated-list-make your-format
+                          (your-entires)
                           :sort-key (cons "Type" nil)
                           :padding 1)
 ```
@@ -39,8 +39,7 @@ With these functionality, you now able to create buffer built on top of
 from `tabulated-list`. This brings you the benefits to just focus on building the
 data table itself.
 
-```el
-```
+See example [here](./examples/test-table.el).
 
 ## Contribution
 
