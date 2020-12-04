@@ -27,7 +27,10 @@
 
 ;;; Commentary:
 ;;
-;; Simplify usage for `tabulated-list'.
+;; This package provides simplified interfaces for transforming lists and
+;; vectors into a format supported by tabulated-list (see function
+;; `easy-tabulated-list-form-entries'), and for creating buffers which display
+;; tabulated lists (see function `easy-tabulated-list-make')
 ;;
 
 ;;; Code:
@@ -67,7 +70,7 @@ LIST-DATA must be a list like below data type is presented
   (let ((len (length tabulated-list-format))
         (list-2-data '()) (lst '()) (cnt 0))
     (unless (numberp len)
-      (user-error "[ERROR] Can't form entries without a valid `tabulated-list-format' is set"))
+      (user-error "[ERROR] Can't form entries without a valid `tabulated-list-format' set"))
     (dolist (item list-data)
       (when (and (= (% cnt len) 0) (not (= cnt 0)))
         (push (reverse lst) list-2-data)
