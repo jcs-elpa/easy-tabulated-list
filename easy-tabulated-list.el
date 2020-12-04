@@ -119,7 +119,7 @@ DATA can either be the following data type.
     result))
 
 ;;;###autoload
-(cl-defun easy-tabulated-list-make (format entries &key sort-key fake-header (padding 1))
+(cl-defun easy-tabulated-list-make (format entries &key sort-key fake-header (padding 0))
   "Make a `tabulated-list' buffer with FORMAT and ENTRIES.
 
 SORT-KEY must be an association list form with a string and a boolean.
