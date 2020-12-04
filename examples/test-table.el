@@ -36,7 +36,10 @@
   (vector (list "Name" 20 t) (list "Version" 8 t) (list "Status" 10))
   "Format that you consider changing it by user's actions.")
 
-(defvar-local test-table-data '()
+(defvar-local test-table-data
+  '(("Item 1" "Item 2" "Item 3")
+    ("Item 4" "Item 5" "Item 6")
+    ("Item 7" "Item 8" "Item 9"))
   "The table data you will consider changing it by user's actions.")
 
 (defun test-table--refresh ()
